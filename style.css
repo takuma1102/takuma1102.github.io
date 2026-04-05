@@ -1,0 +1,284 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-bg: #faf9f7;
+  --color-text: #2c2c2c;
+  --color-text-light: #6b6b6b;
+  --color-accent: #1a4a6e;
+  --color-accent-hover: #0e3350;
+  --color-border: #e0ddd8;
+  --color-header-bg: #ffffff;
+  --font-body: "Source Serif 4", "Noto Serif JP", Georgia, serif;
+  --font-heading: "Source Serif 4", "Noto Serif JP", Georgia, serif;
+  --font-nav: "Source Sans 3", "Noto Sans JP", Helvetica, Arial, sans-serif;
+  --max-width: 780px;
+}
+
+html {
+  font-size: 17px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.72;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Typography (Google Fonts) ===== */
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@400;500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap');
+
+/* ===== Header ===== */
+header {
+  background: var(--color-header-bg);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.1rem 1.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.site-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  gap: 1.6rem;
+}
+
+nav a {
+  font-family: var(--font-nav);
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+nav a:hover {
+  color: var(--color-text);
+}
+
+nav a.active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ===== Main ===== */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+  flex: 1;
+  width: 100%;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin-bottom: 1.4rem;
+  letter-spacing: -0.015em;
+  color: var(--color-text);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-top: 2.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-text);
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+  text-decoration: underline;
+}
+
+/* ===== About Page Layout ===== */
+.about-layout {
+  display: flex;
+  gap: 2.4rem;
+  align-items: flex-start;
+}
+
+.portrait-col {
+  flex-shrink: 0;
+}
+
+.portrait-placeholder {
+  width: 160px;
+  height: 200px;
+  background: var(--color-border);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-light);
+  font-family: var(--font-nav);
+  font-size: 0.85rem;
+}
+
+.portrait-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.bio-col {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ===== Research Page ===== */
+.research-section {
+  margin-bottom: 1.5rem;
+}
+
+.pub-item {
+  margin-bottom: 1.3rem;
+  padding-left: 0.6rem;
+  border-left: 3px solid var(--color-border);
+}
+
+.pub-title {
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+  line-height: 1.45;
+}
+
+.pub-meta {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.2rem;
+}
+
+.pub-links {
+  font-family: var(--font-nav);
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+.pub-links a {
+  font-weight: 500;
+}
+
+/* ===== Teaching Page ===== */
+.teaching-section {
+  margin-bottom: 2.5rem;
+}
+
+.teaching-section h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid var(--color-border);
+  letter-spacing: -0.01em;
+}
+
+.course-item {
+  margin-bottom: 1.2rem;
+  padding-left: 0.6rem;
+}
+
+.course-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.1rem;
+}
+
+.course-meta {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 0.25rem;
+  font-style: italic;
+}
+
+.course-desc {
+  font-size: 0.95rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  border-top: 1px solid var(--color-border);
+  padding: 1.5rem;
+  text-align: center;
+  font-family: var(--font-nav);
+  font-size: 0.8rem;
+  color: var(--color-text-light);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  html {
+    font-size: 16px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.9rem 1.2rem;
+  }
+
+  nav {
+    gap: 1.2rem;
+  }
+
+  .about-layout {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .portrait-placeholder {
+    width: 130px;
+    height: 165px;
+  }
+
+  main {
+    padding: 1.8rem 1.2rem 3rem;
+  }
+}
